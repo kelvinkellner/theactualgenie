@@ -32,7 +32,7 @@ client.on('message', message => { //this event is fired, whenever the bot sees a
                     users[message.author.id] -= 1;
                     message.reply('your wish has been granted!');
                 } else {
-                    message.reply('you do not have any wishes, my friend.');
+                    message.reply('you do not have enough wishes, my friend.');
                 }
             }
             message.channel.send('',{files: ['./assets/' + genies[Math.floor(Math.random() * genies.length)]]});
