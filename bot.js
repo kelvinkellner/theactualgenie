@@ -15,17 +15,12 @@ client.on('message', message => { //this event is fired, whenever the bot sees a
         if(message.content.toLowerCase().includes('i wish')) {
             if(message.content.toLowerCase().includes('more wishes')) {
                 const id = message.author.id;
-                if(id in users) {
-                    if(users[id] == 0) {
-                        users[id] += 3;
-                        message.reply('of course, dear. you have been granted 3 additional wishes for a total of ' + users[message.author.id]);
-                    } else {
-                        users[id] += 3;
-                        message.reply('consider yourself lucky. you have been granted 3 additional wishes for a total of ' + users[message.author.id]);
-                    }
+                if(id in users && users[id] > 0) {
+                    users[id] += 3;
+                    message.reply('consider yourself lucky. you have been granted 3 additional wishes for a total of ' + users[message.author.id] + '.');
                 } else {
                     users[id] = 3;
-                    message.reply('of course, dear. you have been granted 3 additional wishes for a total of ' + users[message.author.id]);
+                    message.reply('of course dear. you have been granted 3 wishes.');
                 }
             } else {
                 if(message.author.id in users && users[message.author.id]!=0) {
