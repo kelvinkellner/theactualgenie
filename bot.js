@@ -23,11 +23,16 @@ client.on('message', message => { //this event is fired, whenever the bot sees a
                     message.reply('of course dear. you have been granted 3 wishes.');
                 }
             } else {
-                if(message.author.id in users && users[message.author.id]!=0) {
-                    users[message.author.id] -= 1;
-                    message.reply('your wish has been granted!');
+                if(message.author.id in users) {
+                    if(users[message.author.id] == 0) {
+                        message.reply('you do not have enough wishes, my friend.');
+                    } else {
+                        users[message.author.id] -= 1;
+                        message.reply('your wish has been granted!');
+                    }
                 } else {
-                    message.reply('you do not have enough wishes, my friend.');
+                    users[message.author.id] = 0;
+                    message.reply('your wish has been granted!');
                 }
             }
             message.channel.send('',{files: ['./assets/' + genies[Math.floor(Math.random() * genies.length)]]});
