@@ -25,6 +25,7 @@ client.on('message', message => { //this event is fired, whenever the bot sees a
                     }
                 } else {
                     users[id] = 3;
+                    message.reply('of course, dear. you have been granted 3 additional wishes for a total of ' + users[message.author.id]);
                 }
             } else {
                 if(message.author.id in users && users[message.author.id]!=0) {
