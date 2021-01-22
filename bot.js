@@ -13,7 +13,7 @@ client.on('ready', () => {
 client.on('message', message => { //this event is fired, whenever the bot sees a new message
     try {
         if(message.content.toLowerCase().includes('i wish')) {
-            if(message.content.toLowerCase().includes('more wishes')) {
+            if(message.content.toLowerCase().includes('wishes')) {
                 const id = message.author.id;
                 if(id in users && users[id] > 0) {
                     users[id] += 3;
