@@ -1,0 +1,6 @@
+# Don't share tokens
+config.json
+
+# Ignore local node.js stuffs
+node_modules
+package-lock.json
