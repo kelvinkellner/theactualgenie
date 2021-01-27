@@ -1,4 +1,4 @@
-# theactual
+# theactualgenie
 
 A meme Discord bot.
 
